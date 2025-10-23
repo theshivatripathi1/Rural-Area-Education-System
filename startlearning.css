@@ -1,0 +1,73 @@
+ /* Basic Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+  }
+  
+  .navbar {
+    background: linear-gradient(to right, #d32f2f, #ff5252);
+    padding: 10px;
+    color: white;
+    text-align: center;
+  }
+  
+  .navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+  }
+  
+  .course-intro, .course-overview, .course-modules, .quizzes, .assignments, .discussion-forum {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 20px;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+  }
+  
+  a {
+    /* color: #4CAF50; */
+     color: linear-gradient(to right, #d32f2f, #ff5252);
+    text-decoration: none;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .module {
+    margin-bottom: 30px;
+  }
+  
+  .module iframe {
+    width: 100%;
+    height: 315px;
+    margin-bottom: 10px;
+  }
+  
+  .download-link, .start-quiz, .join-forum {
+    display: inline-block;
+    margin-top: 10px;
+    background: linear-gradient(to right, #d32f2f, #ff5252);
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+  
+  .download-link:hover, .start-quiz:hover, .join-forum:hover {
+    background-color: #45a049;
+  }
+   
+
+   

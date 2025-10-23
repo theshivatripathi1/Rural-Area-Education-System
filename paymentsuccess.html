@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Payment Successful - shalaMitra</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="paymentsuccess.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css" />
+</head>
+<body>
+  <header>
+    <img class="logo" src="open-book.png" height="40px" width="40px">
+    <span style="margin-right: 450px; font-size: 17px;">shalaMitra</span>
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index2.html" target="_blank">COURSES</a></li>
+        <li><a href="index3.html">STATIONERY</a></li>
+        <li><a href="index4.html">DEVICES</a></li>
+      </ul>
+    </nav>
+    <a href="#" class="cta"><button>Contact</button></a>
+  </header>
+  <hr size=1px color="black">
+
+  <div class="success-container">
+    <div class="success-icon">
+      <i class="fas fa-check-circle"></i>
+    </div>
+    <h1>Payment Successful!</h1>
+    <p>Thank you for your purchase. Your order has been confirmed.</p>
+    <p>A confirmation email has been sent to your registered email address.</p>
+    
+    <div class="order-details">
+      <h3>Order Details</h3>
+      <div class="order-info">
+        <p><strong>Order ID:</strong> <span id="order-id">ORD-${Math.floor(Math.random() * 1000000)}</span></p>
+        <p><strong>Date:</strong> <span id="order-date">${new Date().toLocaleDateString()}</span></p>
+      </div>
+      
+      <div id="success-order-summary">
+        <!-- Order items will be populated from localStorage -->
+      </div>
+      
+      <div class="order-total">
+        <div class="total-row">
+          <span>Subtotal</span>
+          <span id="success-subtotal">₹0</span>
+        </div>
+        <div class="total-row">
+          <span>Shipping</span>
+          <span>FREE</span>
+        </div>
+        <div class="total-row grand-total">
+          <span>Total Paid</span>
+          <span id="success-grand-total">₹0</span>
+        </div>
+      </div>
+    </div>
+    
+    <div class="success-actions">
+      <button class="print-receipt" onclick="window.print()">Print Receipt</button>
+      <button class="continue-shopping" onclick="window.location.href='index.html'">Continue Shopping</button>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const order = JSON.parse(localStorage.getItem('checkout')) || [];
+      const orderSummary = document.getElementById('success-order-summary');
+      let total = 0;
+
+      order.forEach(item => {
+        const itemTotal = item.price * item.quantity;
+        total += itemTotal;
+        
+        const itemElement = document.createElement('div');
+        itemElement.className = 'success-order-item';
+        itemElement.innerHTML = `
+          <div class="item-image">
+            <img src="${item.image}" alt="${item.name}">
+          </div>
+          <div class="item-details">
+            <h4>${item.name}</h4>
+            <p>₹${item.price} × ${item.quantity}</p>
+          </div>
+          <div class="item-price">₹${itemTotal}</div>
+        `;
+        orderSummary.appendChild(itemElement);
+      });
+
+      document.getElementById('success-subtotal').textContent = `₹${total}`;
+      document.getElementById('success-grand-total').textContent = `₹${total}`;
+      
+      // Clear checkout data after successful payment
+      localStorage.removeItem('checkout');
+      
+      // Store order history
+      const orderHistory = JSON.parse(localStorage.getItem('orderHistory') || '[]');
+      orderHistory.push({
+        id: document.getElementById('order-id').textContent,
+        date: document.getElementById('order-date').textContent,
+        items: order,
+        total: total
+      });
+      localStorage.setItem('orderHistory', JSON.stringify(orderHistory));
+    });
+  </script>
+</body>
+</html>

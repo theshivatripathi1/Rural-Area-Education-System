@@ -1,0 +1,138 @@
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f3f4f6;
+  }
+  
+  .checkout-container {
+    display: flex;
+    max-width: 1200px;
+    margin: 80px auto 40px auto;
+    gap: 20px;
+    padding: 20px;
+  }
+  
+  .checkout-left {
+    flex: 2;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .checkout-right {
+    flex: 1;
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  }
+  
+  .payment-methods {
+    margin: 20px 0;
+  }
+  
+  .payment-method {
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    cursor: pointer;
+  }
+  
+  .payment-method.active {
+    border-color: #007185;
+    background-color: #f7feff;
+  }
+  
+  .payment-method input {
+    margin-right: 10px;
+  }
+  
+  .payment-form {
+    margin-top: 20px;
+  }
+  
+  .form-group {
+    margin-bottom: 15px;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: 500;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .form-row {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .form-row .form-group {
+    flex: 1;
+  }
+  
+  .pay-now-btn {
+    width: 100%;
+    padding: 12px;
+    background-color: #FFD814;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+    margin-top: 20px;
+  }
+  
+  .pay-now-btn:hover {
+    background-color: #F7CA00;
+  }
+  
+  .order-item {
+    display: flex;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+  }
+  
+  .item-image img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+    margin-right: 15px;
+  }
+  
+  .item-details {
+    flex: 1;
+  }
+  
+  .item-price {
+    font-weight: bold;
+  }
+  
+  .order-total {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px solid #eee;
+  }
+  
+  .total-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+  }
+  
+  .grand-total {
+    font-weight: bold;
+    font-size: 18px;
+  }
+  

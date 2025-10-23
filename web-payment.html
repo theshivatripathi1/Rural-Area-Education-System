@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Payment</title>
+  <link rel="stylesheet" href="payment.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <div class="logo">Rural Area Dev</div>
+  </nav>
+
+  <!-- Payment Section -->
+  <div class="payment-container">
+    <h1>Payment Options</h1>
+    <p><strong>Course:</strong> Web Development</p>
+    <p><strong>Amount:</strong> ₹500</p>
+
+    <form class="payment-form" action="web-paymentsuccess.html" method="GET">
+      <div class="payment-methods">
+        <label><input type="radio" name="payment" value="upi" required /> UPI</label>
+        <label><input type="radio" name="payment" value="card" /> Debit/Credit Card</label>
+        <label><input type="radio" name="payment" value="netbanking" /> Net Banking</label>
+      </div>
+
+      <button type="submit" class="purchase-btn">Proceed to Payment</button>
+    </form>
+  </div>
+
+</body>
+</html>

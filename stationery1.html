@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rural Area Development</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <!-- Google icon -->
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="stationery1.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<body>
+  <!-- Nav bar -->
+  <header>
+    <img class="logo" src="open-book.png" height="40px" width="40px">
+    <!-- <span style="margin-right: 210px; font-size: 17px;">shalaMitra</span> -->
+    <span style="margin-right: 450px; font-size: 17px;">shalaMitra</span>
+    
+    
+    <nav>
+      <ul class="nav_links">
+        <li><a href="index.html">HOME</a></li>
+        <li><a href="index2.html" target="_blank">COURSES</a></li>
+        <!-- <li><a href="#">BLOG</a></li>  -->
+        <li><a href="index3.html">STATIONERY</a></li>
+        <li><a href="index4.html">DEVICES</a></li>
+        <!-- <li><a href="#">ABOUT US</a></li>
+        <li><a href="#">PROFILE</a></li> -->
+      </ul>
+    </nav>
+    <a href="#" class="cta"><button>Contact</button></a>
+  </header>
+  <hr size=1px color="black">
+ 
+
+  <!-- //////////////////////// -->
+  
+  <div style="height: 700px; border: 1px solid black;">
+
+      
+    <div class="FBox"  >
+        <div class="Fbox-left">
+        
+         <div class="Sub-name">Pencil</div>
+         <div class="img"></div>
+         <img src="OIP (5).jpeg" alt="Content Writing Image" >
+        </div>
+         <div class="Fbox-right">
+            <ul style="line-height: 40px;">
+              <div class="product-title">Smooth writing, break-resistant, eco-friendly wood, dark graphite, comfortable grip, lightweight, durable, school-friendly, affordable, perfect for daily use.</div>
+              <div class="product-price">Price: ₹<span id="unitPrice">80</span> each</div>
+          
+              <div class="quantity-selector">
+                Quantity:
+                <input type="number" id="quantity" value="1" min="1" max="50" />
+              </div>
+          
+              <p class="total-price">Total: ₹<span id="total-price">80</span></p>
+
+              <div class="button-row">
+                <button class="add-to-cart-btn">Add to Cart</button>
+                <button class="buy-now-btn">Buy Now</button>
+              </div>
+          
+              <script>
+                const unitPrice = 80;
+                const quantityInput = document.getElementById("quantity");
+                const totalPriceDisplay = document.getElementById("total-price");
+                const addToCartBtn = document.querySelector('.add-to-cart-btn');
+                const buyNowBtn = document.querySelector('.buy-now-btn');
+                
+                // Update total price when quantity changes
+                quantityInput.addEventListener("input", () => {
+                  let quantity = parseInt(quantityInput.value);
+                  if (isNaN(quantity) || quantity < 1) quantity = 1;
+                  if (quantity > 50) quantity = 50;
+                  quantityInput.value = quantity;
+                  totalPriceDisplay.textContent = unitPrice * quantity;
+                });
+                
+                // Add to cart functionality
+                addToCartBtn.addEventListener('click', () => {
+                  const quantity = parseInt(quantityInput.value);
+                  const product = {
+                    name: 'Pencil',
+                    price: unitPrice,
+                    quantity: quantity,
+                    image: 'OIP (5).jpeg'
+                  };
+                  
+                  let cart = JSON.parse(localStorage.getItem('cart')) || [];
+                  cart.push(product);
+                  localStorage.setItem('cart', JSON.stringify(cart));
+                  alert('Item added to cart!');
+                });
+                
+                // Buy now functionality
+                buyNowBtn.addEventListener('click', () => {
+                  const quantity = parseInt(quantityInput.value);
+                  const product = {
+                    name: 'Pencil',
+                    price: unitPrice,
+                    quantity: quantity,
+                    image: 'OIP (5).jpeg'
+                  };
+                  
+                  localStorage.setItem('checkout', JSON.stringify([product]));
+                  window.location.href = 'purchase.html';
+                });
+              </script>
+              
+
+
+            </ul>
+        </div>
+
+    </div>
+
+    
+       
+
+
+
+  </div>
+
+
+
+  <!-- More Courses -->
+  <hr size=1px color="black">
+  <h1 style="font-weight: 600; margin-left: 610px; margin-top: 30px;">More Products</h1>
+  <div class="faculty">
+    <div class="sub sub1">
+        <div class="pic"><img src="OIP (8).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">Erasers</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹10</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery4.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+        
+          
+        </div>
+    </div>
+    <div class="sub sub1">
+        <div class="pic"><img src="OIP (9).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">Scissors</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹45</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery5.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+          
+          
+        </div>
+    </div>
+    <div class="sub sub1">
+        <div class="pic"><img src="OIP (10).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">Staplers</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹30</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery6.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+          
+        </div>
+    </div>
+  </div>
+
+<!-- ////// -->
+
+
+<div class="faculty">
+    <div class="sub sub1">
+        <div class="pic"><img src="OIP (11).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">highlighters</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹15</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery7.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+    
+          
+        </div>
+    </div>
+    <div class="sub sub1">
+        <div class="pic"><img src="download (2).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">sticky notes</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹30</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery8.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+         
+          
+        </div>
+    </div>
+    <div class="sub sub1">
+        <div class="pic"><img src="OIP (12).jpeg" class="q1"></div>
+        <div class="text"><button class="a1" style="margin-left: 80px;">Combo</button>
+          <p style="padding-left: 120px; font-weight: 500;"> ₹350</p>
+          <div style="padding-left: 20px;"><br><br><br></div>
+          <a href="stationery9.html"><button class="a1" style="margin-top: 10px; margin-left: 90px;">Add to cart</button></a>
+        
+          
+        </div>
+    </div>
+  </div>
+  <hr>
+
+
+  
+  <!-- last section -->
+   <div  class="m1"  style="width: 100%; height: 400px; background-color: rgba(157, 157, 255, 0.429);">
+    <div class="m2"> <img class="logo logo1" src="open-book.png" height="100px" width="100px"></div>
+    <div class="m2"><h2 style="font-weight: 600; margin-top: 40px; margin-left: 20px;">Permalinks</h2>
+      <br>
+    <ul style="padding-left: 40px; padding-top: 20px;">
+      <li>Home</li>
+      <br>
+      <li>About</li>
+      <br>
+      <li>Courses</li>
+      <br>
+      <li>Contact</li>
+    </ul></div>
+    <div class="m2"><h2 style="font-weight: 600;  margin-top: 40px; margin-left: 20px;">Primacy</h2>
+      <br>
+    <ul style="padding-left: 40px; padding-top: 20px;">
+      <li>Privacy Policy</li>
+      <br>
+      <li>Terms and Conditions</li>
+      <br>
+      <li>Refund Policy</li>
+    </ul></div>
+    <div class="m2"><h2 style="font-weight: 600;  margin-top: 40px; margin-left: 20px;">Contact Us</h2>
+      <br>
+      <br>
+    <div style="padding-left: 20px; color: rgb(114, 107, 255);;">+91 9427383233</div>
+    <br>
+    <div style="padding-left: 20px; color: rgb(114, 107, 255);;">ruraldev723@gmail.com</div>
+    
+   </div>
+   <script src="script.js"></script>
+</body>
+
+</html>
