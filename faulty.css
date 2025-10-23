@@ -1,0 +1,27 @@
+.FBox {
+    height: 550px;
+    width: 85%;
+    /* background-color: #0000ff5e; */
+    border-radius: 10px;
+    margin: 80px 111px;
+    display: flex;
+    
+}
+
+.img {
+    background-image: url("https://plus.unsplash.com/premium_photo-1664300900349-afd61c20f8b8?w=600&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8MXx8cHJvZmVzc29yfGVufDB8fDB8fHww");
+    height: 432px;
+    width: 333px;
+    background-size: cover;
+    margin: 50px;
+    border-radius: 10px;
+}
+
+.Sub-name {
+    margin-left: 154px;
+    font-size: 40px;
+}
+
+.Fbox-right {
+    margin-left: 207px;
+}

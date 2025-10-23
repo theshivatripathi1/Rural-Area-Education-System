@@ -1,0 +1,68 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f5f7fa;
+  min-height: 100vh;
+}
+
+.navbar {
+  background: #4b6cb7;
+  background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+  color: #fff;
+  padding: 18px 0;
+  text-align: center;
+  font-size: 1.5rem;
+  letter-spacing: 2px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+}
+
+.purchase-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.purchase-container h1 {
+  font-size: 2.2rem;
+  color: #22223b;
+  margin-bottom: 30px;
+  font-weight: 700;
+}
+
+.purchase-card {
+  background: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.09);
+  padding: 40px 32px;
+  min-width: 320px;
+  max-width: 90vw;
+  text-align: left;
+}
+
+.purchase-card p {
+  font-size: 1.1rem;
+  color: #22223b;
+  margin: 18px 0;
+}
+
+.purchase-btn {
+  display: inline-block;
+  margin-top: 24px;
+  padding: 12px 32px;
+  background: linear-gradient(90deg, #4b6cb7 0%, #182848 100%);
+  color: #fff;
+  border: none;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s, transform 0.2s;
+  box-shadow: 0 2px 8px rgba(75,108,183,0.10);
+}
+
+.purchase-btn:hover {
+  background: linear-gradient(90deg, #182848 0%, #4b6cb7 100%);
+  transform: translateY(-2px) scale(1.03);
+}

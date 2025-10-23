@@ -1,0 +1,462 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    background: linear-gradient(135deg, #9b7c7c, #7a5050);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.container {
+    background: #fff;
+    border-radius: 50px;
+    box-shadow: 0 20px 45px rgba(0, 0, 0, 0.25);
+    position: relative;
+    overflow: hidden;
+    width: 768px;
+    max-width: 100%;
+    min-height: 600px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.container input {
+    background: #f8f8f8;
+    border: 1px solid rgba(168, 45, 45, 0.1);
+    padding: 15px 20px;
+    margin: 10px 0;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 15px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.container button {
+    background: linear-gradient(45deg, #a82d2d, #c05c5c);
+    color: #fff;
+    border: none;
+    border-radius: 25px;
+    padding: 15px 50px;
+    font-size: 13px;
+    font-weight: 600;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    margin-top: 20px;
+    box-shadow: 0 5px 15px rgba(168, 45, 45, 0.2);
+}
+
+.icons a {
+    border: 1px solid rgba(168, 45, 45, 0.1);
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 8px;
+    height: 45px;
+    width: 45px;
+    color: #a82d2d;
+    background: #fff;
+    transition: all 0.4s ease;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+.toogle-container {
+    border-radius: 0 35px 35px 0;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.container.active .toogle-container {
+    border-radius: 35px 0 0 35px;
+}
+
+.toogle {
+    background: linear-gradient(135deg, #a82d2d, #c05c5c);
+    box-shadow: 0 5px 45px rgba(168, 45, 45, 0.25);
+}
+
+/* Add these new styles for enhanced visual effects */
+.container::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+    transform: rotate(45deg);
+    pointer-events: none;
+}
+
+.container input:focus {
+    background: #fff;
+    box-shadow: 0 0 0 3px rgba(168, 45, 45, 0.1);
+    transform: translateY(-2px);
+}
+
+.container button:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(168, 45, 45, 0.3);
+    background: linear-gradient(45deg, #c05c5c, #a82d2d);
+}
+
+.icons a:hover {
+    color: #fff;
+    background: linear-gradient(45deg, #a82d2d, #c05c5c);
+    border-color: transparent;
+    transform: translateY(-3px) scale(1.1);
+    box-shadow: 0 5px 15px rgba(168, 45, 45, 0.3);
+}
+
+.sign-up, .sign-in {
+    position: absolute;
+    top: 0;
+    height: 100%;
+    transition: all 0.6s ease-in-out;
+}
+
+/* Update the sign-up and sign-in positioning */
+.sign-up {
+    left: 50%;
+    width: 50%;
+    opacity: 0;
+    z-index: 1;
+}
+
+.container.active .sign-up {
+    transform: translateX(0);
+    opacity: 1;
+    z-index: 5;
+    animation: show 0.6s;
+}
+
+.sign-in {
+    left: 0;
+    width: 50%;
+    z-index: 2;
+}
+
+.container.active .sign-in {
+    transform: translateX(100%);
+}
+
+/* Add animation for smooth transition */
+@keyframes show {
+    0%, 49.99% {
+        opacity: 0;
+        z-index: 1;
+    }
+    50%, 100% {
+        opacity: 1;
+        z-index: 5;
+    }
+}
+
+/* Update toggle container positioning */
+.toogle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 0 150px 100px 0;
+    z-index: 1000;
+}
+
+.container.active .toogle-container {
+    transform: translateX(-100%);
+    border-radius: 150px 0 0 100px;
+}
+
+.container form {
+    background: #fff;
+    display: flex;
+    flex-direction: column;
+    padding: 0 50px;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+.container h1 {
+    font-weight: bold;
+    margin: 0;
+    color: #333;
+}
+
+.container p {
+    font-size: 14px;
+    line-height: 20px;
+    letter-spacing: 0.3px;
+    margin: 20px 0;
+}
+
+.container span {
+    font-size: 12px;
+    color: #666;
+    letter-spacing: 0.5px;
+    margin: 15px 0;
+}
+
+.container a {
+    color: #333;
+    font-size: 13px;
+    text-decoration: none;
+    margin: 15px 0 10px;
+}
+
+.container input {
+    background: #f6f6f6;
+    border: none;
+    padding: 12px 15px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 8px;
+    outline: none;
+    transition: 0.3s ease;
+}
+
+.container input:focus {
+    background: #fff;
+    box-shadow: 0 0 0 2px #a82d2d20;
+}
+
+.container button {
+    background: linear-gradient(45deg, #a82d2d, #c05c5c);
+    color: #fff;
+    border: none;
+    border-radius: 20px;
+    padding: 12px 45px;
+    font-size: 12px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    margin-top: 15px;
+}
+
+.container button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 7px 15px rgba(168, 45, 45, 0.3);
+}
+
+.container button.hidden {
+    background: transparent;
+    border: 2px solid #fff;
+    margin-top: 20px;
+}
+
+.icons {
+    margin: 20px 0;
+}
+
+.icons a {
+    border: 1px solid #ddd;
+    border-radius: 50%;
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 5px;
+    height: 40px;
+    width: 40px;
+    color: #333;
+    transition: all 0.3s ease;
+}
+
+.icons a:hover {
+    color: #a82d2d;
+    border-color: #a82d2d;
+    transform: translateY(-3px);
+}
+
+.toogle-container {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 50%;
+    height: 100%;
+    overflow: hidden;
+    transition: all 0.6s ease-in-out;
+    border-radius: 150px 0 0 100px;
+    z-index: 1000;
+}
+
+.toogle {
+    background: linear-gradient(to right, #a82d2d, #c05c5c);
+    color: #fff;
+    position: relative;
+    left: -100%;
+    height: 100%;
+    width: 200%;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.container.active .toogle {
+    transform: translateX(50%);
+}
+
+.toogle-panel {
+    position: absolute;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 30px;
+    text-align: center;
+    top: 0;
+    transform: translateX(0);
+    transition: all 0.6s ease-in-out;
+}
+
+.toogle-left {
+    transform: translateX(-200%);
+}
+
+.container.active .toogle-left {
+    transform: translateX(0);
+}
+
+.toogle-right {
+    right: 0;
+    transform: translateX(0);
+}
+
+.container.active .toogle-right {
+    transform: translateX(200%);
+}
+
+.toogle-panel h1 {
+    color: #fff;
+}
+
+.toogle-panel p {
+    color: #fff;
+    font-size: 14px;
+    margin: 15px 0 30px;
+}
+
+/* Update container size and shape */
+.container {
+    background: #ffffff;
+    border-radius: 60px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+    position: relative;
+    overflow: hidden;
+    width: 700px;
+    max-width: 95%;
+    min-height: 480px; /* Increased height for more content */
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Update toggle container curves */
+.toogle-container {
+    border-radius: 60px; /* Match container's curvy corners */
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+}
+
+.container.active .toogle-container {
+    border-radius: 60px; /* Match container's curvy corners */
+}
+
+/* Adjust form padding for smaller container */
+.container form {
+    padding: 0 35px;
+    padding: 12px 24px; /* Less vertical and horizontal padding */
+    height: 100%;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+/* Make inputs slightly smaller */
+.container input {
+    padding: 12px 16px;
+    margin: 6px 0;
+    font-size: 13px;
+}
+
+/* Adjust button size */
+.container button {
+    padding: 10px 35px;
+    font-size: 12px;
+    margin-top: 12px;
+}
+
+/* Make icons slightly smaller */
+.icons a {
+    height: 35px;
+    width: 35px;
+    margin: 0 5px;
+}
+
+/* Update background color */
+body {
+    background: linear-gradient(135deg, #c05c5c, #a82d2d);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+}
+
+/* Brighten up the form elements */
+.container input {
+    background: #fafafa;
+    border: 1px solid rgba(168, 45, 45, 0.08);
+    padding: 14px 18px;
+    margin: 8px 0;
+    width: 100%;
+    font-size: 14px;
+    border-radius: 12px;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+/* Update toggle container style */
+.toogle {
+    background: linear-gradient(135deg, #d06666, #b33636);
+    box-shadow: 0 5px 45px rgba(168, 45, 45, 0.2);
+}
+
+/* Brighten up the buttons */
+.container button {
+    background: linear-gradient(45deg, #b33636, #d06666);
+    padding: 8px 24px; /* Less padding */
+    font-size: 13px;
+    margin-top: 10px;  /* Less margin */
+    box-shadow: 0 5px 15px rgba(168, 45, 45, 0.15);
+}
+
+/* Update form padding */
+.container form {
+    padding: 0 40px;
+}
+
+/* Adjust icon sizes */
+.icons a {
+    height: 40px;
+    width: 40px;
+    margin: 0 6px;
+}

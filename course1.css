@@ -1,0 +1,30 @@
+.FBox {
+    height: 550px;
+    width: 85%;
+    /* background-color: #0000ff5e; */
+    border-radius: 10px;
+    margin: 80px 111px;
+    display: flex;
+    justify-content: center;
+}
+
+.img {
+    width: 30%;
+    background-size: cover;
+    margin: 50px;
+    border-radius: 20px;
+
+}
+
+.Sub-name {
+    margin-left: 154px;
+    font-size: 40px;
+}
+
+.Fbox-right {
+    margin-left: 207px;
+}
+.Fbox-left h2{
+    text-align: left;
+    margin: 20px;
+}
